@@ -1,0 +1,143 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+canvas {
+  display: block;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  max-height: 100dvh !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Game container styles */
+#phaser-game {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* FORCE FULLSCREEN ON MOBILE */
+@media screen and (max-width: 1024px) {
+  html {
+    height: -webkit-fill-available;
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* Small phones in landscape (iPhone SE, etc.) */
+@media screen and (max-width: 736px) and (orientation: landscape) {
+  canvas {
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+  }
+}
+
+/* Large phones in landscape (iPhone Pro, etc.) */
+@media screen and (min-width: 737px) and (max-width: 1024px) and (orientation: landscape) {
+  canvas {
+    image-rendering: auto;
+  }
+}
+
+/* Tablets in landscape */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  canvas {
+    image-rendering: auto;
+  }
+}
+
+/* Laptops and desktops */
+@media screen and (min-width: 1367px) {
+  canvas {
+    image-rendering: auto;
+  }
+}
+
+/* High DPI screens optimization */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Prevent zoom on mobile */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* Hide scrollbars */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: auto;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* iOS Safari fullscreen fix */
+@supports (-webkit-touch-callout: none) {
+  body {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Prevent pull-to-refresh */
+@media screen and (max-width: 1024px) {
+
+  html,
+  body {
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: auto;
+  }
+}
