@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Phaser from 'phaser';
-import MenuScene from './MenuScene';
-import GameScene from './GameScene';
-import GameOverScene from './GameOverScene';
+import MenuScene from '../scenes/MenuScene';
+import GameScene from '../scenes/GameScene';
+import GameOverScene from '../scenes/GameOverScene';
 
 const PhaserGame = () => {
     const gameRef = useRef(null);
